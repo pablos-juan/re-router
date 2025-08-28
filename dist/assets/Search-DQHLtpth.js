@@ -1,0 +1,1 @@
+import{r as s,j as t}from"./index-BlMXiDAe.js";function a({routeParams:e}){return s.useEffect(()=>{document.title=`Has buscado ${e.query}`},[]),t.jsxs("h1",{children:["Has buscado ",e.query]})}export{a as default};

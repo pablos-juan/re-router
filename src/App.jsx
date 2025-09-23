@@ -1,28 +1,18 @@
 import { Router } from './Router'
+import { Route } from './Route'
 
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
 import SearchPage from './pages/Search'
 
-const routes = [
-  {
-    path: '/',
-    Component: HomePage
-  },
-  {
-    path: '/about',
-    Component: AboutPage
-  },
-  {
-    path: '/search/:query',
-    Component: SearchPage
-  }
-]
-
 function App () {
   return (
     <main>
-      <Router routes={routes} />
+      <Router>
+        <Route path='/' Component={HomePage} />
+        <Route path='/about' Component={AboutPage} />
+        <Route path='/search/:query' Component={SearchPage} />
+      </Router>
     </main>
   )
 }

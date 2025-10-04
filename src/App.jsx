@@ -14,7 +14,7 @@ function App () {
         <Router>
           <Route path='/' Component={HomePage} />
           <Route path='/about' Component={LazyAboutPage} />
-          <Route path='/search/:query' Component={LazySearchPage} />
+          <Route path='/search{/:query}' Component={LazySearchPage} />
         </Router>
       </Suspense>
     </main>

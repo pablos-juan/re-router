@@ -13,7 +13,7 @@ function App () {
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
           <Route path='/' Component={HomePage} />
-          <Route path='/about' Component={LazyAboutPage} />
+          <Route path='{/:lang}/about' Component={LazyAboutPage} />
           <Route path='/search{/:query}' Component={LazySearchPage} />
         </Router>
       </Suspense>

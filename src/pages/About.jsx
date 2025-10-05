@@ -1,13 +1,30 @@
 import { Link } from '../Link'
 
-console.log('Cargando About...')
+const i18n = {
+  es: {
+    title: 'Sobre nosotros',
+    description: 'Página sobre nosotros en español.',
+    button: 'Ir a la Home'
+  },
+  en: {
+    title: 'About us',
+    description: 'About page in english.',
+    button: 'Go to home page'
+  }
+}
 
-export default function AboutPage () {
+function useI18n (lang) {
+  return i18n[lang] || i18n.es
+}
+
+export default function AboutPage ({ routeParams }) {
+  const { title, description, button } = useI18n(routeParams.lang ?? 'es')
+
   return (
     <>
-      <h1>About</h1>
-      <p>Página sobre el about.</p>
-      <Link to='/'>Ir a la Home</Link>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <Link to='/'>{button}</Link>
     </>
   )
 }
